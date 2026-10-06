@@ -1,4 +1,8 @@
 import express from "express";
+import { openDb } from "./db";
+
+const db = openDb();
+console.log("Database siap");
 
 const app = express();
 app.use(express.json());
