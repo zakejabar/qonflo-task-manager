@@ -1,0 +1,5 @@
+{
+  "name": "qonflo-task-manager",
+  "private": true,
+  "workspaces": ["backend", "frontend"]
+}
