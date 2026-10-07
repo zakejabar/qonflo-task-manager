@@ -33,3 +33,11 @@ export type AuditLog = {
     toStatus: TaskStatus | null;
     createdAt: string;
 };
+
+export function isTaskStatus(value: unknown): value is TaskStatus {
+  return typeof value === "string" && (TASK_STATUSES as readonly string[]).includes(value);
+}
+
+export function isActor(value: unknown): value is Actor {
+  return typeof value === "string" && (ACTORS as readonly string[]).includes(value);
+}
