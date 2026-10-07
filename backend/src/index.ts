@@ -1,17 +1,10 @@
-import express from "express";
 import { openDb } from "./db";
+import { createApp } from "./app";
 
 const db = openDb();
-console.log("Database siap");
-
-const app = express();
-app.use(express.json());
-
-app.get("/api/health", (_req, res) => {
-  res.json({ ok: true });
-});
+const app = createApp(db);
 
 const PORT = 3000;
 app.listen(PORT, () => {
-  console.log(`Backend jalan di http://localhost:${PORT}`);
+  console.log(`Backend running on http://localhost:${PORT}`);
 });
